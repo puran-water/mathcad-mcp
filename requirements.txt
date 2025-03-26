@@ -1,0 +1,3 @@
+mcp>=0.2.0
+MathcadPy>=0.0.4
+pywin32>=306
