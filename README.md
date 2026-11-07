@@ -1,5 +1,14 @@
 # MathCAD MCP Server
 
+## Standalone Windows integration
+
+This repository connects an MCP client to an installed, licensed MathCAD Prime application through Windows COM. It is a separate integration, not a portable replacement for MathCAD and not part of the six-server PuranOS calculation mirror. A client on another operating system still needs a supported Windows execution arrangement.
+
+Current PuranOS [proposal and BEP workflows](https://github.com/puran-water/PuranOS-public/blob/main/docs/workflows.md) use shared engineering libraries and retained calculation evidence. Their operation does not depend on installing this MathCAD connector. See the [public package catalogue](https://github.com/puran-water/PuranOS-public/blob/main/docs/public-tools.md) for local engineering tools with their own supported runtimes.
+
+Published by [Puran Water](https://puranwater.com/). The API and application requirements below apply to this integration.
+
+
 A Model Context Protocol (MCP) server that provides integration with PTC MathCAD Prime, allowing AI assistants like Claude to interact with MathCAD worksheets through a standardized interface.
 
 ## Features
@@ -38,7 +47,7 @@ A Model Context Protocol (MCP) server that provides integration with PTC MathCAD
 
 ### Manual Configuration
 
-Edit your Claude Desktop configuration file at `~/Library/Application Support/Claude/claude_desktop_config.json` (Mac) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+Configure the Windows MCP client, for example `%APPDATA%\Claude\claude_desktop_config.json` for Claude Desktop. The server process must have access to Windows COM and the installed MathCAD application:
 
 ```json
 {
